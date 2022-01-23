@@ -5,10 +5,7 @@ const freqSlider = document.getElementById("freq");
 
 
 const audioContext = new window.AudioContext();
-const gain = audioContext.createGain();
 let osc;
-
-console.log(gain);
 
 startBtn.addEventListener('click', function(){
     osc = audioContext.createOscillator();
