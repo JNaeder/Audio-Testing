@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Audio Testing</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="oscillator_section">
-        <h1>Oscillator</h1>
-        <div class="button_container">
-            <button id="osc_start">Start</button>
-            <button id="osc_stop">Stop</button>
-        </div>
-        <div class="slider_container">
-            <input type="range" name="freq" id="freq" min="20" max="1000">
-            <label for="freq">Frequency</label>
-            <input type="range" name="gain" id="gain" value="50">
-            <label for="gain">Volume</label>
-            <input type="range" name="filter" id="filter" min="20" max="1000">
-            <label for="filter">Filter</label>
-            <input type="range" name="resonance" id="resonance" min="-3" max="3">
-            <label for="resonance">Resonance</label>
-        </div>
+      <h1>Oscillator</h1>
+      <div class="button_container">
+        <button id="osc_start">Start</button>
+        <button id="osc_stop">Stop</button>
+      </div>
+      <div class="slider_container">
+        <input type="range" name="wave" id="wave" min="1" max="4" />
+        <label for="wave">Waveform</label>
+        <input type="range" name="freq" id="freq" min="20" max="1000" />
+        <label for="freq">Frequency</label>
+        <input type="range" name="gain" id="gain" value="50" />
+        <label for="gain">Volume</label>
+        <input type="range" name="filter" id="filter" min="20" max="1000" />
+        <label for="filter">Filter</label>
+        <input type="range" name="resonance" id="resonance" min="-3" max="3" />
+        <label for="resonance">Resonance</label>
+      </div>
     </div>
 
     <div class="audio_section">
-        <h1>Audio</h1>
-        <audio src="" id="audio_player"></audio>
-        <div class="button_container">
-            <button id="audio_start">Start</button>
-            <button id="audio_stop">Stop</button>
-        </div>
+      <h1>Audio</h1>
+      <audio src="" id="audio_player"></audio>
+      <div class="button_container">
+        <button id="audio_start">Start</button>
+        <button id="audio_stop">Stop</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
