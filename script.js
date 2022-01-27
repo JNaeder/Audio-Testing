@@ -1,8 +1,11 @@
-const startBtn = document.getElementById("start");
-const stopBtn = document.getElementById("stop");
+const oscStartBtn = document.getElementById("osc_start");
+const oscStopBtn = document.getElementById("osc_stop");
+const audioStartBtn = document.getElementById("audio_start");
+const audioStopBtn = document.getElementById("audio_stop");
 const freqSlider = document.getElementById("freq");
 const gainSlider = document.getElementById("gain");
 const filterSlider = document.getElementById("filter");
+const resonanceSlider = document.getElementById("resonance");
 
 
 const audioContext = new window.AudioContext();
@@ -14,6 +17,10 @@ let osc;
 
 let filterNode = audioContext.createBiquadFilter();
 filterNode.connect(gainNode);
+filterNode.Q.setValueAtTime(3, audioContext.currentTime);
+console.log(filterNode);
+
+let randomGen;
 
 
 // Functions
@@ -21,17 +28,39 @@ const startOsc = function(){
     osc = audioContext.createOscillator();
     osc.frequency.setValueAtTime(freqSlider.value, audioContext.currentTime);
     osc.connect(filterNode);
+    console.log(osc);
+    randomGen = setInterval(randomNotes, 100);
+    osc.type = "sawtooth";
     osc.start();
 }
 
 const stopOsc = function(){
     osc.stop();
     osc.disconnect();
+    clearInterval(randomGen);
+    // console.log(osc);
+}
+
+const startAudio = function(){
+    console.log("Start");
+}
+
+const stopAudio = function(){
+    console.log("Stop");
+}
+
+const randomNotes = function(){
+    const randomNum = Math.trunc(Math.random() * 1000);
+    osc.frequency.setValueAtTime(randomNum, audioContext.currentTime);
+    freqSlider.value = randomNum;
 }
 
 
-startBtn.addEventListener('click', startOsc);
-stopBtn.addEventListener('click', stopOsc);
+
+oscStartBtn.addEventListener('click', startOsc);
+oscStopBtn.addEventListener('click', stopOsc);
+audioStartBtn.addEventListener('click', startAudio);
+audioStopBtn.addEventListener('click', stopAudio);
 
 freqSlider.addEventListener('input', function(){
     osc.frequency.setValueAtTime(this.value, audioContext.currentTime);
@@ -43,4 +72,10 @@ gainSlider.addEventListener('input', function(){
 
 filterSlider.addEventListener('input', function(){
     filterNode.frequency.setValueAtTime(this.value, audioContext.currentTime);
+})
+
+resonanceSlider.addEventListener('input', function(){
+    filterNode.Q.setValueAtTime(this.value, audioContext.currentTime);
+    console.log(this.value);
+    console.log(filterNode.Q);
 })
