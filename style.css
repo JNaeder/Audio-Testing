@@ -1,5 +1,44 @@
-body{
-    background-color: rgb(32, 32, 32);
-    color: rgb(117, 167, 143);
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: rgb(32, 32, 32);
+  color: rgb(117, 167, 143);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  appearance: none;
+  border: 2px solid rgb(117, 167, 143);
+  color: rgb(117, 167, 143);
+  background-color: rgb(32, 32, 32);
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.slider_container {
+  display: flex;
+  /* background-color: aqua; */
+  width: 50%;
+  height: 300px;
+}
+
+.fader_container {
+  /* background-color: brown; */
+  font-size: small;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 75px;
+  padding: 0;
+  /* border: 1px red solid; */
+}
+
+.vertical {
+  position: relative;
+  transform: rotate(270deg);
+  outline: none;
+  appearance: none;
+  border-radius: 10px;
+  background-color: rgb(75, 75, 75);
 }

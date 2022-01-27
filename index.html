@@ -15,17 +15,84 @@
         <button id="osc_start">Start</button>
         <button id="osc_stop">Stop</button>
       </div>
+      <input type="checkbox" name="random" id="random" />
+      <label for="random">Random Notes</label>
       <div class="slider_container">
-        <input type="range" name="wave" id="wave" min="1" max="4" />
-        <label for="wave">Waveform</label>
-        <input type="range" name="freq" id="freq" min="20" max="1000" />
-        <label for="freq">Frequency</label>
-        <input type="range" name="gain" id="gain" value="50" />
-        <label for="gain">Volume</label>
-        <input type="range" name="filter" id="filter" min="20" max="1000" />
-        <label for="filter">Filter</label>
-        <input type="range" name="resonance" id="resonance" min="-3" max="3" />
-        <label for="resonance">Resonance</label>
+        <div class="fader_container">
+          <label for="gain">Volume</label>
+          <input
+            type="range"
+            name="gain"
+            id="gain"
+            min="0"
+            max="3"
+            step="0.01"
+            class="vertical"
+          />
+          <span class="slider_value" id="gain_number">00</span>
+        </div>
+        <div class="fader_container">
+          <label for="wave">Waveform</label>
+          <input
+            type="range"
+            name="wave"
+            id="wave"
+            min="1"
+            max="4"
+            class="vertical"
+          />
+          <span class="slider_value" id="wave_number">00</span>
+        </div>
+        <div class="fader_container">
+          <label for="freq">Frequency</label>
+          <input
+            type="range"
+            name="freq"
+            id="freq"
+            min="20"
+            max="1000"
+            class="vertical"
+          />
+          <span class="slider_value" id="freq_number">00</span>
+        </div>
+        <div class="fader_container">
+          <label for="filter">Filter Frequency</label>
+          <input
+            type="range"
+            name="filter"
+            id="filter"
+            min="20"
+            max="1000"
+            class="vertical"
+          />
+          <span class="slider_value" id="filter_number">00</span>
+        </div>
+        <div class="fader_container">
+          <label for="resonance">Filter Resonance</label>
+          <input
+            type="range"
+            name="resonance"
+            id="resonance"
+            min="-3"
+            max="3"
+            step="0.01"
+            class="vertical"
+          />
+          <span class="slider_value" id="res_number">00</span>
+        </div>
+        <div class="fader_container">
+          <label for="resonance">Panner</label>
+          <input
+            type="range"
+            name="panner"
+            id="panner"
+            min="-1"
+            max="1"
+            step="0.01"
+            class="vertical"
+          />
+          <span class="slider_value" id="pan_number">00</span>
+        </div>
       </div>
     </div>
 
